@@ -46,7 +46,7 @@ model.compile(optimizer=opt, loss=keras.losses.categorical_crossentropy, metrics
 
 model.summary()
 
-epochs = 25
+epochs = 30
 
 # Training
 fitted_model = model.fit(x=train_dataset, 
@@ -58,9 +58,11 @@ fitted_model = model.fit(x=train_dataset,
                         verbose=1
                     )
 
+# Saving of Model
 model.save('my_model')
 
+# Loading of Model
 loaded_model = keras.models.load_model('my_model')
 
-#Evaluation
+# Evaluation of Model
 loaded_model.evaluate(test_dataset)
